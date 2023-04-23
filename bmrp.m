@@ -1,17 +1,17 @@
-function x_rec = pbmr(x,sampling_nodes,L, epsilon, q, partition)
+function x_rec = pbmr(x,sampling_nodes,L, epsilon, q, partitions)
     % x: noisy singnal vector length N with entries representing the nodes signal value
     % sampling_nodes: set of sampling nodes
     % L lamplacian matrix
     % epsilon: pertubation
     % q: laplacian power
-    % partition: vector length N with entries representing the nodes partition
+    % partitions: vector length N with entries representing the nodes partition
 
     N = length(x) % number of nodes
     x_rec= zeros(N,1);
     c= zeros(N,1);
 
-    for partition = 1:max(partition)
-        Nodes = find(map == partition);
+    for partition = 1:max(partitions)
+        Nodes = find(partitions == partition);
         power = 1;
         Neighbor_nodes = Nodes % for initial serach
         while power<=q % incread to the  -hop
