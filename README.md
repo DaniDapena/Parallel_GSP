@@ -1,6 +1,7 @@
 # Parallel_GSP
 
 This repository contains code for implementing the sampling and reconstruction techniques presented in [Parallel Graph Signal Processing: Sampling and Reconstruction](https://ieeexplore.ieee.org/abstract/document/10081083).
+The paper uses the [metis](https://github.com/KarypisLab/METIS) library and [metismex](https://github.com/YingzhouLi/metismex) implematation in matlab to create the partitios:
 
 ## Reconstruction
 
