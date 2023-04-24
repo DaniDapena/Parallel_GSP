@@ -1,16 +1,17 @@
-function [S_0,S_in] = my_vc_v00(w,m,IP,a,Nodes_b)
+function [S_0,S_in] = my_vc_v00(w,m,IP,Nodes_b)
 
 %Input
     % w weight matrix
     % density_pattern density of the patter view as the ration of selected
     % IP initial patter (mask)
-    % U control variable to use density
+    % Nodes_b node in taht belong to the border 
 
 
 % Output
     % S final pattern vector quith value of 1 in the selected node
     % otherwise
     % S _in initial random pattern
+
     %% Inicial
     N=max(size(w));
     density_pattern=m/N;
@@ -29,15 +30,6 @@ function [S_0,S_in] = my_vc_v00(w,m,IP,a,Nodes_b)
     
     
 
-    if a~=0
-        for i=1:N
-            for j=1:N
-                p=max(d(i),d(j));
-                w(i,j)=w(i,j)*p^(a);
-            end
-        end
-    end
-    
     %% pricinpal path length
     G=graph(w);
     Geodesics=distances(G);

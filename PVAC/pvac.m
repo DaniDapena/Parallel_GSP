@@ -34,7 +34,7 @@ function sampling_nodes =  pVAC(W,n_samples, partitions)
         m_temp = full(round(n_samples*sum(sum(Gbin.W))/sum(W(:))));
         Nodes_b = [];
         if m_temp>0
-            [pattern_path_bin ,query] =e rror_diffusion(Gbin,m_temp,0.5)
+            [pattern_path_bin ,query] =error_diffusion(Gbin,m_temp,0.5)
             S_initial(Nodes) = pattern_path_bin;
         end
     end
@@ -46,7 +46,7 @@ function sampling_nodes =  pVAC(W,n_samples, partitions)
         IP = S_initial(Nodes);
         N_aux = length(Nodes);
         m_temp=full(round(n_samples*sum(sum(W(Nodes,Nodes)))/sum(G.W(:))));
-        S_VC_partition =  my_vc_v00(W_partition,m_temp,IP,0,Nodes_border);
+        S_VC_partition =  my_vc_v00(W_partition,m_temp,IP,Nodes_border);
         selected_nodes{partition}=Nodes(find(S_VC_partition==1));
     end
     for ii=1:length(unique(map))
