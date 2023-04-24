@@ -19,7 +19,7 @@ The output is:
 
 ## PVAC
 
-`pvac.m` function implements partitioned void and cluster sampling. It requires the `error_diffusion.mat` and `my_ca_v00.m` files. The inputs are:
+`pvac.m` function implements partitioned void and cluster sampling. It requires the `error_diffusion.mat` and `my_vca_v00.m` files. The inputs are:
 
 `W`: the weight matrix.
 `n_sample`s: the number of samples.
